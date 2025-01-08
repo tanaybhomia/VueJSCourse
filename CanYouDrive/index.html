@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Can You Drive ?</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/normalize.css/normalize.css"
+    />
+    <style type="text/css">
+      body {
+        font-family: monospace;
+        padding: 20px;
+        font-size: 2em;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@3.4.0"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" v-model="email" />
+      <input type="password" v-model="password" />
+      <p>email: {{ email }}</p>
+      <p>password: {{ password }}</p>
+    </div>
+    <script>
+      const { createApp, ref, computed } = Vue;
+      const App = {
+        setup() {
+          let email = ref("");
+          let password = ref("");
+          return {
+            email,
+            password,
+          };
+        },
+      };
+
+      createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
